@@ -1,0 +1,27 @@
+==
+<?php
+function onInit()
+{
+    $this['path_css'] = mix('assets/dist/css/app.css', 'themes/oc-theme-tailwind-starter-kit');
+    $this['path_js'] = mix('assets/dist/js/app.js', 'themes/oc-theme-tailwind-starter-kit');
+    $this['path_manifest_js'] = mix('assets/dist/js/manifest.js', 'themes/oc-theme-tailwind-starter-kit');
+    $this['path_vendor_js'] = mix('assets/dist/js/vendor.js', 'themes/oc-theme-tailwind-starter-kit');
+}
+?>
+==
+{% spaceless %}
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        {% partial 'head/head' %}
+    </head>
+    <body itemscope itemtype="http://schema.org/WebPage">
+      {% partial 'header/header' %}
+      <main>
+          {% page %}
+      </main>
+      {% partial 'footer/footer' %}
+      {% partial 'scripts/scripts' %}
+    </body>
+</html>
+{% endspaceless %}
